@@ -17,7 +17,8 @@ class _ChooseLocationState extends State<ChooseLocation> {
     WorldTime(url: 'America/New_York', location: 'New York', flag: 'usa.png'),
     WorldTime(url: 'Asia/Seoul', location: 'Seoul', flag: 'south_korea.png'),
     WorldTime(url: 'Asia/Jakarta', location: 'Jakarta', flag: 'indonesia.png'),
-    WorldTime(url: 'Asia/Tokyo',location: 'Tokyo', flag: 'japan.png')
+    WorldTime(url: 'Asia/Tokyo',location: 'Tokyo', flag: 'japan.png'),
+    WorldTime(url: 'Asia/Kolkata',location: 'Kolkata', flag: 'india.png')
   ];
 
   void updateTime(index) async {
@@ -43,27 +44,40 @@ class _ChooseLocationState extends State<ChooseLocation> {
         centerTitle: true,
         elevation: 0,
       ),
-      body: ListView.builder(
-        itemCount: locations.length,
-        itemBuilder: (context, index){
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 1.0,horizontal: 4.0),
-            child: Card(
-              child: ListTile(
-                onTap: () {
-                  print(locations[index].location);
-                  updateTime(index);
-                },
-                title: Text(locations[index].location),
-                leading: CircleAvatar(
-                  backgroundImage: AssetImage('assets/${locations[index].flag}'),
-                  backgroundColor: Colors.white,
-                ),
-              ),
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/world.png'),
+              fit: BoxFit.cover,
             ),
-          );
-        },
-      ),
+        ),
+          
+        child:  ListView.builder(
+                  itemCount: locations.length,
+                  itemBuilder: (context, index){
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 1.0,horizontal: 4.0),
+                      child: Card(
+                        child: ListTile(
+                          onTap: () {
+                            print(locations[index].location);
+                            updateTime(index);
+                          },
+                          title: Text(locations[index].location),
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage('assets/${locations[index].flag}'),
+                            backgroundColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+
+
+      ),      
+      
+
     );
   }
 }
