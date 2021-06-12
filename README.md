@@ -5,6 +5,9 @@ beginning the world time app,
 A simple app to show time in different parts of the world, as instructed by NetNinja Tutorial (with ofcourse a few additions of my own) 
 - Tutorial Link (https://youtube.com/playlist?list=PL4cUxeGkcC9jLYyp2Aoh6hcWuxFDX6PBJ)
 - Huge Thanks to @iamshaunjp, original project link (https://github.com/iamshaunjp/flutter-beginners-tutorial)
+- Loading screen spinner (https://pub.dev/packages/flutter_spinkit)
+- time data by (http://worldtimeapi.org/)
+- JSON placeholder [not explicitly used in code] (https://jsonplaceholder.typicode.com/)
 
 
 ## Getting Started
